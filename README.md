@@ -1,5 +1,5 @@
 # daily-kotlin
-Utilities which use in daily life in Kotlin
+Kotlin Utilities which use in daily life
 
 # JSON extension
 
