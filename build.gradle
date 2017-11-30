@@ -19,7 +19,7 @@ allprojects {
 
     ext {
         //android
-        supportVersion = '27.0.1'
+        supportVersion = '26.0.2'
         androidAppCompatV7 = "com.android.support:appcompat-v7:$supportVersion"
         androidSupportDesign = "com.android.support:design:$supportVersion"
         androidCardView = "com.android.support:cardview-v7:$supportVersion"
