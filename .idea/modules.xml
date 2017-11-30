@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/daily/daily.iml" filepath="$PROJECT_DIR$/daily/daily.iml" />
+      <module fileurl="file://$PROJECT_DIR$/daily-kotlin.iml" filepath="$PROJECT_DIR$/daily-kotlin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../sample/daily-kotlin.iml" filepath="$PROJECT_DIR$/../sample/daily-kotlin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sample/app.iml" filepath="$PROJECT_DIR$/sample/app.iml" />
+    </modules>
+  </component>
+</project>
