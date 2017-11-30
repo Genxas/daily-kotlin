@@ -1,6 +1,18 @@
 # daily-kotlin
 Kotlin Utilities which use in daily life
 
+# Installation
+
+```
+repositories {
+    maven { url 'https://jitpack.io' }
+}
+
+dependencies {
+    implementation 'com.github.genxas:daily-kotlin:0.1.0'
+}
+```
+
 # JSON extension
 
 Single object
