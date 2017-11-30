@@ -1,21 +1,31 @@
 language: android
+jdk: oraclejdk8
+dist: trusty
+env:
+  global:
+    - ADB_INSTALL_TIMEOUT=8
 
 android:
   components:
     - tools
     - build-tools-26.0.2
+    - platform-tools
+    - android-24
     - android-26
     - extra-android-support
+    - extra-google-m2repository
     - extra-android-m2repository
-  licenses:
-    - android-sdk-license-.+
+    - sys-img-armeabi-v7a-android-24
 
-jdk:
-  - oraclejdk8
-
-cache:
-  directories:
-    - $HOME/.gradle
+before_script:
+  - echo no | android create avd --force -n test -t android-24 --abi armeabi-v7a
+  - QEMU_AUDIO_DRV=none emulator -avd test -no-window &
+  - android-wait-for-emulator
+  - adb shell settings put global window_animation_scale 0 &
+  - adb shell settings put global transition_animation_scale 0 &
+  - adb shell settings put global animator_duration_scale 0 &
+  - adb shell input keyevent 82 &
 
 script:
-  - ./gradlew test --stacktrace
+  ./gradlew checkstyle build test connectedDebugAndroidTest && ./gradlew assembleRelease
+
