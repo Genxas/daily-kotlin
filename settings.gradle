@@ -1,1 +1,1 @@
-include ':sample', ':daily'
+include ':sample', ':daily', ':daily-android'

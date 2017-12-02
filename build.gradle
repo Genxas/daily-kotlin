@@ -18,6 +18,9 @@ allprojects {
     }
 
     ext {
+        //info
+        publishVersion = '0.1.2'
+
         //android
         supportVersion = '26.0.2'
         androidAppCompatV7 = "com.android.support:appcompat-v7:$supportVersion"
