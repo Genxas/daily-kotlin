@@ -11,7 +11,7 @@ repositories {
 }
 
 dependencies {
-    implementation 'com.github.genxas:daily-kotlin:0.1.0'
+    implementation 'com.github.genxas:daily-kotlin:0.1.2'
 }
 ```
 
