@@ -18,7 +18,7 @@ class JsonExtensionTest {
 
     @Test
     fun deserializeObjects() {
-        val users = "[{\"name\": \"john doe\"}, {\"name\": \"jane doe\"}]".toObjects(Array<User>::class.java)
+        val users = "[{\"name\": \"john doe\"}, {\"name\": \"jane doe\"}]".toObjects<User>()
 
         assertNotNull(users)
         assertEquals(2, users.size)

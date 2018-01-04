@@ -9,25 +9,22 @@ import com.google.gson.stream.JsonReader
 import com.google.gson.stream.JsonToken
 import com.google.gson.stream.JsonWriter
 
+
 inline fun <reified T> String.toObject(): T {
-    GsonBuilder()
+    return GsonBuilder()
             .registerTypeAdapterFactory(NullStringToEmptyAdapterFactory())
             .enableComplexMapKeySerialization()
             .setDateFormat("yyyy-MM-dd'T'hh:mm:ss")
             .create()
-            .run {
-                return fromJson(this@toObject, T::class.java)
-            }
+            .fromJson(this@toObject, T::class.java)
 }
 
-inline fun <reified T> String.toObjects(classOf: Class<Array<T>>): MutableList<T> {
-    return ArrayList(GsonBuilder()
+inline fun <reified T> String.toObjects(): MutableList<T> {
+    return GsonBuilder()
             .registerTypeAdapterFactory(NullStringToEmptyAdapterFactory())
             .setDateFormat("yyyy-MM-dd'T'hh:mm:ss")
             .create()
-            .run {
-                fromJson(this@toObjects, classOf)
-            }.asList())
+            .fromJson(this@toObjects, TypeToken.getParameterized(ArrayList::class.java, T::class.java).type)
 }
 
 class NullStringToEmptyAdapterFactory : TypeAdapterFactory {

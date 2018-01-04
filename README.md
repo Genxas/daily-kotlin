@@ -11,7 +11,7 @@ repositories {
 }
 
 dependencies {
-    implementation 'com.github.genxas:daily-kotlin:0.1.2'
+    implementation 'com.github.genxas:daily-kotlin:0.1.3'
 }
 ```
 
@@ -26,7 +26,7 @@ Single object
 Multiple objects
 
 ```kotlin
-"[{\"name\": \"john doe\"}, {\"name\": \"jane doe\"}]".toObjects(Array<User>::class.java)
+"[{\"name\": \"john doe\"}, {\"name\": \"jane doe\"}]".toObjects<User>()
 ```
 
 # Number extension
